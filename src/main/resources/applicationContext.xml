@@ -20,20 +20,44 @@
         <property name="suffix" value=".jsp"/>
     </bean>
 
+    <!--   Bean的配置_____________________________________________________________________________________________  -->
     <!-- 指定id，id在IOC容器中唯一-->
-    <bean id="helloServiceById" class="self.springmvc.service.impl.HelloServiceByIdImpl"/>
+    <bean id="helloServiceById" class="self.springmvc.beanConfig.service.impl.HelloServiceByIdImpl"/>
 
     <!-- 不指定id，只配置必须的全限定类名:用于定义Bean的实现类，由IoC容器为其生成一个标识 -->
-    <bean class="self.springmvc.service.impl.HelloServiceByTypeImpl"/>
+    <bean class="self.springmvc.beanConfig.service.impl.HelloServiceByTypeImpl"/>
 
     <!-- 指定name，name在IOC容器中唯一-->
-    <bean name="helloServiceByName" class="self.springmvc.service.impl.HelloServiceByNameImpl"/>
+    <bean name="helloServiceByName" class="self.springmvc.beanConfig.service.impl.HelloServiceByNameImpl"/>
 
     <!-- 指定id和name，那么id在IOC容器中唯一，name作为别名，IOC会消除name和id的冲突。-->
-    <!--<bean name="helloServiceByIdName" id="helloServiceByIdName" class="self.springmvc.service.impl.HelloServiceByIdNameImpl"/>-->
+    <!--<bean name="helloServiceByIdName" id="helloServiceByIdName" class="self.springmvc.beanConfig.service.impl.HelloServiceByIdNameImpl"/>-->
     <!-- 多个别名-->
-    <bean name="helloServiceByIdName,helloServiceByIdName1,helloServiceByIdName2,helloServiceByIdName3" id="helloServiceByIdName" class="self.springmvc.service.impl.HelloServiceByIdNameImpl"/>
+    <bean name="helloServiceByIdName,helloServiceByIdName1,helloServiceByIdName2,helloServiceByIdName3" id="helloServiceByIdName" class="self.springmvc.beanConfig.service.impl.HelloServiceByIdNameImpl"/>
     <!-- 定义别名-->
     <alias name="helloServiceByIdName" alias="helloServiceByIdName4"></alias>
     <alias name="helloServiceByIdName" alias="helloServiceByIdName5"></alias>
+    <!--   Bean的配置_____________________________________________________________________________________________  -->
+
+
+    <!-- 实例化bean____________________________________________________________________________________________________ -->
+    <!-- 无参构造函数实例化，如果注释掉该实现类的无参构造函数，那么就会编译报错。 -->
+    <bean id="bIHelloService1" class="self.springmvc.beanInstantiaton.service.impl.HelloServiceImpl"/>
+    <!-- 参数构造函数实例化 -->
+    <bean id="bIHelloService2" class="self.springmvc.beanInstantiaton.service.impl.HelloServiceImpl">
+        <constructor-arg index="0" value="Welcome to XiaMen"/>
+    </bean>
+    <!-- 使用静态工厂方法实例化 -->
+    <bean id="bIHelloService3" class="self.springmvc.beanInstantiaton.service.HelloServiceStaticFactory" factory-method="getBean"/>
+    <bean id="bIHelloService4" class="self.springmvc.beanInstantiaton.service.HelloServiceStaticFactory" factory-method="getBean">
+        <constructor-arg index="0" value="Welcome to XiaMen4"/>
+    </bean>
+    <!-- 使用实例工厂方法实例化-->
+    <!-- 定义实例工厂Bean-->
+    <bean id="helloServiceFactoryBean" class="self.springmvc.beanInstantiaton.service.HelloServiceFactory"/>
+    <!-- 使用实例工厂Bean实例化Bean-->
+    <bean id="bIHelloService5" factory-bean="helloServiceFactoryBean" factory-method="getBean"/>
+    <bean id="bIHelloService6" factory-bean="helloServiceFactoryBean" factory-method="getBean">
+        <constructor-arg index="0" value="Welcome to XiaMen5"/>
+    </bean>
 </beans>

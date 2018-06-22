@@ -2,13 +2,15 @@ import org.junit.Test;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import self.springmvc.service.inter.HelloServiceById;
-import self.springmvc.service.inter.HelloServiceByIdName;
-import self.springmvc.service.inter.HelloServiceByName;
-import self.springmvc.service.inter.HelloServiceByType;
+import self.springmvc.beanConfig.service.inter.HelloServiceById;
+import self.springmvc.beanConfig.service.inter.HelloServiceByIdName;
+import self.springmvc.beanConfig.service.inter.HelloServiceByName;
+import self.springmvc.beanConfig.service.inter.HelloServiceByType;
 
 /**
- * Description
+ * IOC容器配置Bean
+ * 主要内容：Bean的定义，获取
+ * @Date: 2018/06/22
  */
 public class BeanConfig {
     @Test

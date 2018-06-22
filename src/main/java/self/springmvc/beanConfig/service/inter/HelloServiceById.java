@@ -1,4 +1,4 @@
-package self.springmvc.service.inter;
+package self.springmvc.beanConfig.service.inter;
 
 /**
  * Description

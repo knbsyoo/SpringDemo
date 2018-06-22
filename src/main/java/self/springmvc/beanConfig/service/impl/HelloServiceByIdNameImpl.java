@@ -1,6 +1,6 @@
-package self.springmvc.service.impl;
+package self.springmvc.beanConfig.service.impl;
 
-import self.springmvc.service.inter.HelloServiceByIdName;
+import self.springmvc.beanConfig.service.inter.HelloServiceByIdName;
 
 /**
  * Description
