@@ -20,6 +20,20 @@
         <property name="suffix" value=".jsp"/>
     </bean>
 
-    <bean id="helloService" class="self.springmvc.service.impl.HelloServiceImpl">
-    </bean>
+    <!-- 指定id，id在IOC容器中唯一-->
+    <bean id="helloServiceById" class="self.springmvc.service.impl.HelloServiceByIdImpl"/>
+
+    <!-- 不指定id，只配置必须的全限定类名:用于定义Bean的实现类，由IoC容器为其生成一个标识 -->
+    <bean class="self.springmvc.service.impl.HelloServiceByTypeImpl"/>
+
+    <!-- 指定name，name在IOC容器中唯一-->
+    <bean name="helloServiceByName" class="self.springmvc.service.impl.HelloServiceByNameImpl"/>
+
+    <!-- 指定id和name，那么id在IOC容器中唯一，name作为别名，IOC会消除name和id的冲突。-->
+    <!--<bean name="helloServiceByIdName" id="helloServiceByIdName" class="self.springmvc.service.impl.HelloServiceByIdNameImpl"/>-->
+    <!-- 多个别名-->
+    <bean name="helloServiceByIdName,helloServiceByIdName1,helloServiceByIdName2,helloServiceByIdName3" id="helloServiceByIdName" class="self.springmvc.service.impl.HelloServiceByIdNameImpl"/>
+    <!-- 定义别名-->
+    <alias name="helloServiceByIdName" alias="helloServiceByIdName4"></alias>
+    <alias name="helloServiceByIdName" alias="helloServiceByIdName5"></alias>
 </beans>

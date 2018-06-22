@@ -3,6 +3,6 @@ package self.springmvc.service.inter;
 /**
  * Description
  */
-public interface HelloService {
-    public void sayHello();
+public interface HelloServiceById {
+    void sayHello();
 }

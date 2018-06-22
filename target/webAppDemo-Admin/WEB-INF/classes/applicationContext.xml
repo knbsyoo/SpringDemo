@@ -19,4 +19,9 @@
         <property name="prefix" value="/WEB-INF/pages/"/>
         <property name="suffix" value=".jsp"/>
     </bean>
+
+    <bean id="helloService" class="self.springmvc.service.impl.HelloServiceImpl"/>
+
+    <!-- 不指定id，只配置必须的全限定类名:用于定义Bean的实现类，由IoC容器为其生成一个标识 -->
+    <bean class="self.springmvc.service.impl.HelloServiceImpl"/>
 </beans>
