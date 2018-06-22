@@ -10,7 +10,7 @@ import self.springmvc.service.inter.HelloServiceByType;
 /**
  * Description
  */
-public class IOCTest {
+public class BeanConfig {
     @Test
     public void testHelloService(){
         ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
