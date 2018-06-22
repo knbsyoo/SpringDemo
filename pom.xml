@@ -35,7 +35,6 @@
       <artifactId>spring-webmvc</artifactId>
       <version>${spring.version}</version>
     </dependency>
-    <!-- spring 核心依赖-->
 
     <!-- servlet,jsp依赖-->
     <dependency>
@@ -48,8 +47,13 @@
       <artifactId>jsp-api</artifactId>
       <version>2.1</version>
     </dependency>
-    <!-- servlet,jsp依赖-->
 
+    <!-- junit-->
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.12</version>
+    </dependency>
 
   </dependencies>
 

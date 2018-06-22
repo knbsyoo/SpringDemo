@@ -19,4 +19,7 @@
         <property name="prefix" value="/WEB-INF/pages/"/>
         <property name="suffix" value=".jsp"/>
     </bean>
+
+    <bean id="helloService" class="self.springmvc.service.impl.HelloServiceImpl">
+    </bean>
 </beans>
